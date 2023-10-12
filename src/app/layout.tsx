@@ -1,10 +1,10 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Share_Tech_Mono } from 'next/font/google';
 
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const shareTechMono = Share_Tech_Mono( { weight: '400', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Password Generator',
@@ -18,7 +18,7 @@ export default function RootLayout ({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={shareTechMono.className}>{children}</body>
     </html>
   );
 }

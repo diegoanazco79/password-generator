@@ -1,3 +1,95 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-input-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  background-color: #0f0e14;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px !important;
+  height: 20px !important;
+  background: #f3f4f6 !important;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px !important;
+  height: 20px !important;
+  background: #f3f4f6 !important;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-thumb {
+  width: 20px !important;
+  height: 20px !important;
+  background: #f3f4f6 !important;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.square-checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.square-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #24232b;
+  border: 2px solid #f3f4f6
+}
+
+.square-checkbox-container:hover input ~ .checkmark {
+  background-color: #313039;
+}
+
+.square-checkbox-container input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.square-checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.square-checkbox-container .checkmark:after {
+ 	top: 2px;
+	left: 2px;
+	width: 12px;
+	height: 12px;
+	background: white;
+}
