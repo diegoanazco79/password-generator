@@ -8,12 +8,11 @@ import { PasswordOptions } from './types';
 export const getPasswordStrength = (passwordOptions: PasswordOptions) => {
   let puntuacion = 0;
 
-  const { passwordLength, useLowerCase, useUpperCase, useNumbers, useSymbols } =
+  const { passwordLength, useLowerCase, useNumbers, useSymbols } =
     passwordOptions;
 
-  if (passwordLength >= 8) { puntuacion += 1; }
+  if (passwordLength >= 12) { puntuacion += 1; }
   if (useLowerCase) { puntuacion += 1; }
-  if (useUpperCase) { puntuacion += 1; }
   if (useNumbers) { puntuacion += 1; }
   if (useSymbols) { puntuacion += 1; }
 
