@@ -10,13 +10,16 @@ export default function Home () {
   const {
     passwordLength, useLowerCase, hasError, errorMessage,
     useNumbers, useSymbols, currentPassword, loadingPassword,
-    setPasswordLength, setUseLowerCase,
-    setUseNumbers, setUseSymbols,
-    onGeneratePassword
+    setPasswordLength, setUseLowerCase, setUseNumbers,
+    setUseSymbols,
+    onGeneratePassword, copyToClipboard
   } = useRandomPassword();
 
   /* Component's Props */
-  const passwordOutputProps = { currentPassword, loadingPassword };
+  const passwordOutputProps = {
+    currentPassword, loadingPassword,
+    copyToClipboard
+  };
   const passwordOptionsProps = {
     passwordLength, useLowerCase, useNumbers, useSymbols,
     setPasswordLength, setUseLowerCase, setUseNumbers, setUseSymbols

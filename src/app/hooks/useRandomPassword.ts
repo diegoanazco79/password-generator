@@ -34,6 +34,18 @@ const useRandomPassword = () => {
     }
   };
 
+  /**
+   * Copy text to clipboard
+   * @param text - Text to copy to clipboard
+   */
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return {
     /* States */
     passwordLength,
@@ -52,7 +64,8 @@ const useRandomPassword = () => {
     setUseSymbols,
 
     /* Functions */
-    onGeneratePassword
+    onGeneratePassword,
+    copyToClipboard
   };
 };
 
