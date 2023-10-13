@@ -15,12 +15,21 @@ const PasswordOutput = ({ currentPassword, loadingPassword, copyToClipboard }: P
         <span className='text-gray-500 text-2xl'>
           {currentPassword !== '' ? loadingPassword ? 'Generating...' : currentPassword : 'P4$5W0rD!'}
         </span>
-        <button
-          onClick={() => copyToClipboard(currentPassword)}
-          className='text-[#00ff00] hover:text-[#00ff00ba]'
-        >
-          <FaRegCopy className='w-[25px] h-[25px] ' />
-        </button>
+        {currentPassword !== '' && (
+          <div className='group relative flex justify-center'>
+            <button
+              onClick={() => copyToClipboard(currentPassword)}
+              className='text-[#00ff00] hover:text-[#00ff00ba]'
+            >
+              <FaRegCopy className='w-[25px] h-[25px] ' />
+            </button>
+            <span
+              className='absolute w-fit bottom-10 scale-0 bg-[#135113] p-2 text-xs text-white group-hover:scale-100'
+            >
+              Copy to clipboard
+            </span>
+          </div>
+        )}
       </div>
     </>
   );
