@@ -20,7 +20,7 @@ const useRandomPassword = () => {
       setLoadingPassword(true);
       const response = await fetch(`https://www.psswrd.net/api/v1/password/?length=${passwordLength}&lower=${useLowerCase ? 1 : 0}&upper=1&int=${useNumbers ? 1 : 0}&special=${useSymbols ? 1 : 0}`);
       const data = await response.json();
-      if (data.detail.includes('Request was throttled.')) {
+      if (data?.detail?.includes('Request was throttled.')) {
         setErrorMessage(data.detail);
         throw new Error('Request was throttled.');
       }

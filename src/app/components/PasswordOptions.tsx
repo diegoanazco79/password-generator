@@ -38,19 +38,19 @@ const PasswordOptions = ({
       />
       <div className='mt-6'>
         <Checkbox
-          className='mt-1'
+          className='mt-3'
           label='Include Lowercase Letters'
           checked={useLowerCase}
           setChecked={setUseLowerCase}
         />
         <Checkbox
-          className='mt-1'
+          className='mt-3'
           label='Include Numbers'
           checked={useNumbers}
           setChecked={setUseNumbers}
         />
         <Checkbox
-          className='mt-1'
+          className='mt-3'
           label='Include Symbols'
           checked={useSymbols}
           setChecked={setUseSymbols}
