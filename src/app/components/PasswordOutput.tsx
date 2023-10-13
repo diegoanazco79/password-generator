@@ -12,7 +12,7 @@ const PasswordOutput = ({ currentPassword, loadingPassword, copyToClipboard }: P
   return (
     <>
       <div className='flex items-center justify-between p-5 bg-[#24232b] max-w-screen-sm w-full mt-6'>
-        <span className='text-gray-500 text-2xl'>
+        <span className='text-gray-500 text-xl md:text-2xl'>
           {currentPassword !== '' ? loadingPassword ? 'Generating...' : currentPassword : 'P4$5W0rD!'}
         </span>
         {currentPassword !== '' && (
